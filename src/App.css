@@ -1,38 +1,133 @@
-.App {
-  text-align: center;
+
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.light-mode{
+  --bg-color: #fff;
+  --font-color: #121278;
+  --font-color-sec: #fff;
+  --font-color-third: #000;
+  --nav-bg-color: #121278;
+  --btn-bg:#121278;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.dark-mode{
+  --bg-color: #000;
+  --font-color: #fff;
+  --font-color-sec: #fff;
+  --font-color-third: #fff;
+  --nav-bg-color: #121278;
+  --btn-bg:#121278;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body{
+  background: var(--bg-color);
+}
+p,span,h5{
+  color: var(--font-color-third)
+}
+
+.category button {
+  display: block;
+  transition: 0.3s;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: var(--font-color-third)
+}
+
+.product-item {
+  border: 1px solid #000;
+  width: 100%;
+  height: 450px;
+  margin-bottom: 25px;
+  box-shadow: -8px 11px 26px #7e77776b;
+}
+
+.product-item img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.product-details {
+  padding: 20px;
+  height: 58%;
+  position: relative;
+}
+
+.product-details span {
+  display: block;
+}
+
+.product-item button {
+  background: var(--btn-bg);
+  color: var(--font-color-sec);
+  padding: 9px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 15px;
+  transition: 0.3s;
+}
+ul.paginationBttns {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: end;
+  margin-right: 11px;
+}
+.paginationBttns li {
+  list-style: none;
+  padding: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.paginationBttns li a{
+  color: var(--font-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+a[arial-disabled="true"] {
+  color: #c6c6eb;
+}
+nav.navabr {
+  background: var(--nav-bg-color);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: end;
+  margin-bottom: 20px;
+}
+h4{
+  color: var(--font-color);
+}
+.product-item button:hover {
+  opacity: 0.7;
+  background: var(--btn-bg);
+  transition: 0.3s;
+}
+.category button:hover, .category button:active {
+  font-weight: 600;
+  transition: 0.3s;
+}
+select {
+  width: 88%;
+  height: 37px;
+}
+nav.navabr button.theme-btn, a {
+  color: var(--font-color-sec);
+  padding: 0 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (max-width: 767px) {
+  .category button {
+    display: inline-block;
+    padding: 5px 10px;
+    background: var(--btn-bg);
+    margin: 10px;
+    color: var(--font-color-sec);
+    border-radius: 10px;
   }
 }
